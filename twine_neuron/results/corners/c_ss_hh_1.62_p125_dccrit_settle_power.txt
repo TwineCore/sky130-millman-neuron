@@ -1,0 +1,17 @@
+corner=ss_hh T=125.0 VDD=1.62 netlist=netlist/twine_neuron.spice
+== DC codes critiques (±0.5 LSB, portes, mode commun min)
+  [OK ] DC critiques : erreurs de signe = 0 /34   (spec 0)
+  [OK ] |ΔV| min à ±0.5 LSB = 7.38 mV   (spec > 3σ_os (MC))
+  [OK ] erreur ΔV max (codes critiques) = 0.125 LSB   (spec < 0.5 LSB)
+  [OK ] mode commun min V± = 0.7585 V   (spec >= 0.75 V (fenêtre comparateur))
+   (27 s)
+== Stabilisation de V± (horloge à 0, pas d'entrée à t = 20 ns puis retour à t = 270 ns)
+  S=7.5                  t_settle(0.5 LSB) =  33.0 /  32.9 ns
+  S=14.5                 t_settle(0.5 LSB) =  37.7 /  37.5 ns
+  S=19.5 (pire modèle)   t_settle(0.5 LSB) =  36.5 /  36.4 ns
+  [OK ] t_settle 0.5 LSB, pire config (S=14.5) = 37.67 ns   (spec <= 50 ns (visé))
+  [OK ] t_settle vs budget dur (front d'horloge) = 37.67 ns   (spec < 85 ns)
+   (216 s)
+== Puissance statique au pire code (recherche exhaustive sur le modèle, puis simulation)
+  [OK ] P statique pire code ((-7, -7, -7, -7), 31, 1, (0, 0, 0, 0)) = 111.54 µW   (spec info (S12 v2))
+   (25 s)

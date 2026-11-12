@@ -1,0 +1,121 @@
+Netgen 1.5.324 compiled on Thu Oct 15 02:27:49 PM CEST 2026
+Warning: netgen command 'format' use fully-qualified name '::netgen::format'
+Warning: netgen command 'global' use fully-qualified name '::netgen::global'
+Reading netlist file twine_neuron_ext.spice for twine_neuron_ext.spice twine_neuron
+Call to undefined subcircuit sky130_fd_pr__pfet_01v8
+Creating placeholder cell definition.
+Call to undefined subcircuit sky130_fd_pr__nfet_01v8
+Creating placeholder cell definition.
+Call to undefined subcircuit sky130_fd_pr__res_xhigh_po_0p35
+Creating placeholder cell definition.
+Reading netlist file ../netlist/twine_neuron.spice for ../netlist/twine_neuron.spice twine_neuron
+Call to undefined subcircuit slice_w1
+Creating placeholder cell definition.
+Call to undefined subcircuit slice_w2
+Creating placeholder cell definition.
+Call to undefined subcircuit slice_w4
+Creating placeholder cell definition.
+Call to undefined subcircuit slice_w8
+Creating placeholder cell definition.
+Call to undefined subcircuit slice_w16
+Creating placeholder cell definition.
+Call to undefined subcircuit slice_half
+Creating placeholder cell definition.
+Call to undefined subcircuit millman_node
+Creating placeholder cell definition.
+Call to undefined subcircuit comparator
+Creating placeholder cell definition.
+Call to undefined subcircuit sky130_fd_pr__pfet_01v8
+Creating placeholder cell definition.
+Call to undefined subcircuit sky130_fd_pr__nfet_01v8
+Creating placeholder cell definition.
+Call to undefined subcircuit sky130_fd_pr__res_xhigh_po_0p35
+Creating placeholder cell definition.
+
+Reading setup file /foss/pdks/sky130A/libs.tech/netgen/sky130A_setup.tcl
+
+Model sky130_fd_pr__res_xhigh_po_0p35 pin 1 == 2
+No property w found for device sky130_fd_pr__res_xhigh_po_0p35
+No property w found for device sky130_fd_pr__res_xhigh_po_0p35
+No property value found for device sky130_fd_pr__res_xhigh_po_0p35
+No property w found for device sky130_fd_pr__res_xhigh_po_0p35
+No property mult found for device sky130_fd_pr__res_xhigh_po_0p35
+Model sky130_fd_pr__res_xhigh_po_0p35 pin 1 == 2
+No property w found for device sky130_fd_pr__res_xhigh_po_0p35
+No property w found for device sky130_fd_pr__res_xhigh_po_0p35
+No property value found for device sky130_fd_pr__res_xhigh_po_0p35
+No property w found for device sky130_fd_pr__res_xhigh_po_0p35
+Model sky130_fd_pr__nfet_01v8 pin 1 == 3
+No property mult found for device sky130_fd_pr__nfet_01v8
+No property sa found for device sky130_fd_pr__nfet_01v8
+No property sb found for device sky130_fd_pr__nfet_01v8
+No property sd found for device sky130_fd_pr__nfet_01v8
+No property nf found for device sky130_fd_pr__nfet_01v8
+No property nrd found for device sky130_fd_pr__nfet_01v8
+No property nrs found for device sky130_fd_pr__nfet_01v8
+No property area found for device sky130_fd_pr__nfet_01v8
+No property perim found for device sky130_fd_pr__nfet_01v8
+No property topography found for device sky130_fd_pr__nfet_01v8
+Model sky130_fd_pr__nfet_01v8 pin 1 == 3
+No property area found for device sky130_fd_pr__nfet_01v8
+No property perim found for device sky130_fd_pr__nfet_01v8
+No property topography found for device sky130_fd_pr__nfet_01v8
+Model sky130_fd_pr__pfet_01v8 pin 1 == 3
+No property mult found for device sky130_fd_pr__pfet_01v8
+No property sa found for device sky130_fd_pr__pfet_01v8
+No property sb found for device sky130_fd_pr__pfet_01v8
+No property sd found for device sky130_fd_pr__pfet_01v8
+No property nf found for device sky130_fd_pr__pfet_01v8
+No property nrd found for device sky130_fd_pr__pfet_01v8
+No property nrs found for device sky130_fd_pr__pfet_01v8
+No property area found for device sky130_fd_pr__pfet_01v8
+No property perim found for device sky130_fd_pr__pfet_01v8
+No property topography found for device sky130_fd_pr__pfet_01v8
+Model sky130_fd_pr__pfet_01v8 pin 1 == 3
+No property area found for device sky130_fd_pr__pfet_01v8
+No property perim found for device sky130_fd_pr__pfet_01v8
+No property topography found for device sky130_fd_pr__pfet_01v8
+Comparison output logged to file lvs.out
+Logging to file "lvs.out" enabled
+Circuit sky130_fd_pr__pfet_01v8 contains no devices.
+Circuit sky130_fd_pr__nfet_01v8 contains no devices.
+Circuit sky130_fd_pr__res_xhigh_po_0p35 contains no devices.
+
+Contents of circuit 1:  Circuit: 'twine_neuron'
+Circuit twine_neuron contains 773 device instances.
+  Class: sky130_fd_pr__res_xhigh_po_0p35 instances: 124
+  Class: sky130_fd_pr__pfet_01v8 instances: 324
+  Class: sky130_fd_pr__nfet_01v8 instances: 325
+Circuit contains 278 nets.
+Contents of circuit 2:  Circuit: 'twine_neuron'
+Circuit twine_neuron contains 435 device instances.
+  Class: sky130_fd_pr__res_xhigh_po_0p35 instances: 124
+  Class: sky130_fd_pr__pfet_01v8 instances: 156
+  Class: sky130_fd_pr__nfet_01v8 instances: 155
+Circuit contains 278 nets.
+
+Circuit was modified by parallel/series device merging.
+New circuit summary:
+
+Contents of circuit 1:  Circuit: 'twine_neuron'
+Circuit twine_neuron contains 349 device instances.
+  Class: sky130_fd_pr__res_xhigh_po_0p35 instances:  38
+  Class: sky130_fd_pr__pfet_01v8 instances: 156
+  Class: sky130_fd_pr__nfet_01v8 instances: 155
+Circuit contains 224 nets.
+Contents of circuit 2:  Circuit: 'twine_neuron'
+Circuit twine_neuron contains 349 device instances.
+  Class: sky130_fd_pr__res_xhigh_po_0p35 instances:  38
+  Class: sky130_fd_pr__pfet_01v8 instances: 156
+  Class: sky130_fd_pr__nfet_01v8 instances: 155
+Circuit contains 224 nets.
+
+Circuit 1 contains 349 devices, Circuit 2 contains 349 devices.
+Circuit 1 contains 224 nets,    Circuit 2 contains 224 nets.
+
+
+Final result: 
+Circuits match uniquely.
+.
+Logging to file "lvs.out" disabled
+LVS Done.

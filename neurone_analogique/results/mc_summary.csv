@@ -1,0 +1,8 @@
+campaign,corner,vdd,temp,source,metric,value,unit,spec,status
+dcnet,tt_mm,1.8,27.0,results/mc_dcnet.csv,dies,200,,>= 200,OK
+dcnet,tt_mm,1.8,27.0,results/mc_dcnet.csv,σ(ΔV_sim − ΔV_modèle) réseau,0.0867,LSB,info,OK
+dcnet,tt_mm,1.8,27.0,results/mc_dcnet.csv,|ΔV_sim − ΔV_modèle| max,0.3793,LSB,< 0.5 LSB,OK
+dcnet,tt_mm,1.8,27.0,results/mc_dcnet.csv,|ΔV| min aux codes ±0.5 LSB,2.781,mV,info : combiné au seuil MC du comparateur dans sim/mc_combine.py,info
+dcnet,tt_mm,1.8,27.0,results/mc_dcnet.csv,erreurs de signe de ΔV,0,,0,OK
+comp,tt_mm,1.8,27.0,results/mc_comp.csv,σ_os comparateur (Vcm 0.84 V),2.058,mV,< LSB_min/6 = 2.42 mV,OK
+comp,tt_mm,1.8,27.0,results/mc_comp.csv,|offset| max (Vcm 0.84 V),5.515,mV,info (résolution ±0.125 mV),OK

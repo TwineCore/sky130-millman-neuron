@@ -1,0 +1,4 @@
+set,n_dv,dv_abs_min_mV,os_mu_mV,os_sigma_mV,p_err_empirical,p_err_gauss
+cm,400,486.964,-0.049,2.058,0.000e+00,0.000e+00
+half,1600,2.781,-0.049,2.058,2.313e-04,3.623e-04
+die_pairs,40000,,,,1.850e-03,

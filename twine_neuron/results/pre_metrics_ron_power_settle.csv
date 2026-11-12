@@ -1,0 +1,5 @@
+test,value,unit,spec,status,source
+Ron/R_slice max,0.359,%,< 1 %,OK,results/pre_ron.csv
+fuite Hi-Z max,5.27e-10,A,<< I_LSB,OK,results/pre_ron.csv
+"P statique pire code ((-7, -7, -7, -7), 31, 1, (0, 0, 0, 0))",131.66,µW,<= 100 µW (option 1),NON,results/pre_power.csv
+"t_settle 0.5 LSB, pire config (S=14.5)",34.22,ns,<= 50 ns,OK,results/pre_settle.csv

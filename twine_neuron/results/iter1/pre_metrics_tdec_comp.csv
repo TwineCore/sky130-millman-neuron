@@ -1,0 +1,5 @@
+test,value,unit,spec,status,source
+"t_dec à ΔV = 0.5 LSB_min (7.26 mV), pire Vcm",inf,ns,< 30 ns (fenêtre horloge haute − marge),NON,results/pre_comp_tdec.csv
+fenêtre CM fonctionnelle (rampe ±10 mV),0.50–1.80,V,"⊇ [0.75, 1.80]",OK,results/pre_comp_offset.csv
+offset systématique max (0.75–1.8 V),0.0,mV,< LSB/6 = 2.42 mV (aléatoire en phase 3),OK,results/pre_comp_offset.csv
+hystérésis max (0.75–1.8 V),18.28,mV,< LSB/6 = 2.42 mV,NON,results/pre_comp_offset.csv

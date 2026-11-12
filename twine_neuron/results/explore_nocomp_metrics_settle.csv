@@ -1,0 +1,2 @@
+test,value,unit,spec,status,source
+"t_settle 0.5 LSB, pire config (S=14.5)",63.67,ns,<= 50 ns,NON,results/explore_nocomp_settle.csv

@@ -1,0 +1,6 @@
+mos,rc,lib,vdd,temp,dc_sign_err,dv_half_min_mV,dc_err_max_LSB,vcm_min_V,t_settle_ns,t_settle_budget,func_err,kick_flips,kick_rel_pct,P_func_uW,P_worst_uW,status
+tt,typ,tt,1.8,27,0.0,8.04,0.1,0.8415,43.54,43.54,0.0,0.0,38.3,33.36,131.56,NON: kickback différentiel max sur V+−V−
+ss,hh,ss_hh,1.62,-40,0.0,7.28,0.1108,0.7574,58.11,58.11,0.0,0.0,34.1,23.6533,88.67,"NON: t_settle 0.5 LSB, pire config (S=14.5); kickback différentiel max sur V+−V−"
+ss,typ,ss,1.62,125,0.0,7.23,0.162,0.7593,39.22,39.22,0.0,0.0,41.2,29.31,120.5,NON: kickback différentiel max sur V+−V−
+ff,typ,ff,1.98,-40,0.0,8.84,0.0772,0.9248,47.18,47.18,0.0,0.0,34.2,38.54,143.56,NON: kickback différentiel max sur V+−V−
+ff,ll,ff_ll,1.98,125,0.0,8.29,0.1909,0.9265,32.36,32.36,0.0,0.0,45.7,72.8567,274.5,NON: kickback différentiel max sur V+−V−

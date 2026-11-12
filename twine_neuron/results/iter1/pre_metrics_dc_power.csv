@@ -1,0 +1,10 @@
+test,value,unit,spec,status,source
+"erreur ΔV vs modèle (max |.|, tous codes)",0.0566,LSB,< 0.5 LSB,OK,results/pre_dc.csv
+INL poids synapse (max |.|),0.0082,LSB,< 0.5 LSB,OK,results/pre_dc.csv
+DNL poids synapse (max |.|),0.0021,LSB,< 0.5 LSB,OK,results/pre_dc.csv
+INL biais (max |.|),0.0363,LSB,< 0.5 LSB,OK,results/pre_dc.csv
+DNL biais (max |.|),0.0021,LSB,< 0.5 LSB,OK,results/pre_dc.csv
+erreurs de signe (codes non nuls),0,,0,OK,results/pre_dc.csv
+mode commun min V± (codes testés),0.937,V,>= 0.75 V,OK,results/pre_dc.csv
+P statique moyenne (300 codes aléatoires),95.25,µW,"<= 50 µW (moyenne, option 1)",NON,results/pre_dc.csv
+"P statique pire code ((-7, -7, -7, -7), 31, 1, (0, 0, 0, 0))",136.37,µW,<= 100 µW (option 1),NON,results/pre_power.csv

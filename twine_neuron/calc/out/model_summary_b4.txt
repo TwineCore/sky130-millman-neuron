@@ -1,0 +1,57 @@
+==============================================================================
+TwineAnalog — modèle Millman (calc/millman_model.py)
+==============================================================================
+Bornes : N_in=4, |w|<=7, |b|<=15, demi-LSB 0.5 -> S_max = Σ|w|+|b|+0.5 = 43.5
+
+Choix du Thévenin G0 (fenêtre comparateur sur VDD ∈ [1.62, 1.98]) :
+  A: StrongARM NMOS, G0 tout vers VDD (VT=VDD)         -> G0 >=  37.5 Gu, LSB_min = 20.00 mV
+  B: comparateur rail-à-rail [0.3, VDD-0.3], VT=VDD/2  -> G0 >=  87.0 Gu, LSB_min = 12.41 mV
+  C: StrongARM NMOS, VT=VDD/2 (proposition initiale)   -> impossible
+Retenu : option A, G0 = 40 Gu (10 unités R_U en parallèle vers VDD), D_max = 83.5
+LSB = VDD/D : min 19.40 mV (VDD=1.62, D_max) ; nominal à D_max 21.56 mV
+
+Enumération exhaustive : 15^4 poids × 63 biais × 2 (demi-LSB) × 16 entrées = 102.1 M points (×3 VDD)
+  VDD=1.62 : V± ∈ [0.776, 1.620] V ; erreurs de signe (modèle idéal) = 0 ; égalités (h=0, Σ+b=0) = 799640 ; |Σ+b-0.5h| min hors égalité = 0.5 LSB
+  VDD=1.80 : V± ∈ [0.862, 1.800] V ; erreurs de signe (modèle idéal) = 0 ; égalités (h=0, Σ+b=0) = 799640 ; |Σ+b-0.5h| min hors égalité = 0.5 LSB
+  VDD=1.98 : V± ∈ [0.949, 1.980] V ; erreurs de signe (modèle idéal) = 0 ; égalités (h=0, Σ+b=0) = 799640 ; |Σ+b-0.5h| min hors égalité = 0.5 LSB
+  Mode commun min (VDD=1.62) = 0.776 V >= VCM_LO=0.75 V : OK
+
+Compromis Ru (Ru = résistance d'une conductance unitaire Gu ; unité de layout R_U = Ru/4) :
+  P_max = VDD²·39.63·Gu ; P_moy (codes uniformes) = VDD²·21.81·Gu
+  vitesse : t_settle(pire code, marge 1.2) <= 50 ns  =>  Ru <= 1.592 MΩ
+  puissance : P_max(VDD=1.8) <= 50 µW               =>  Ru >= 2.571 MΩ
+  -> INCOMPATIBLES (τ ∝ Ru² car la capa parasite poly ∝ longueur ∝ Ru, P ∝ 1/Ru)
+     Ru retenu = 1.592 MΩ (vitesse prioritaire) => P_max = 80.6 µW, P_moy = 44.4 µW
+  Unité R_U : xhigh_po w=0.35 L=69.46 µm -> R_U = 398.1 kΩ (Ru = 1.592 MΩ), C_U = 10.19 fF
+  C_nœud (estim.) = 410 fF ; R_nœud = Ru/D ∈ [19.1, 39.8] kΩ
+  t_settle 0.5 LSB : typ 40.4 ns (pire S = 16.0) ; avec marge 48.5 ns
+  P_max = 80.6 µW @1.8 V, 97.6 µW @1.98 V ; P_moy = 44.4 µW
+
+Drivers : plus petite slice = biais 16 -> R = Ru/16 = 99.5 kΩ ; Ron < 1 % -> Ron < 995 Ω
+Capa de nœud explicite : 0 (la capa répartie des résistances, 410 fF, domine déjà et absorbe le kickback ; une MIM ralentirait τ)
+
+Comparateur : LSB_min = 19.40 mV -> spec σ < LSB/3 = 6.47 mV ; cible σ < LSB/6 = 3.23 mV (marge SAR 0.5 LSB à 3σ)
+  σ_os ≈ 1.3·A_ΔVgs/√(WL) -> W·L >= 6.6 µm² ; retenu W·L = 12.0 µm² (ex. W=12 L=1 ou 2×(6/1) en centroïde commun)
+  σ_os estimé = 2.40 mV = LSB_min/8.1 ; C_gate ≈ 100 fF par entrée
+
+Monte Carlo (2000 tirages) : σ(R_U)/R_U = 0.702 % (Pelgrom PDK, L=69.46 µm)
+  Erreur de poids (synapse 3b) : σ max-INL = 0.0298 LSB ; |INL| max sur 2000 = 0.1254 LSB
+  Erreur de biais (5b)         : σ max-INL = 0.0497 LSB ; |INL| max sur 2000 = 0.1880 LSB
+
+Tables de vérité attendues (modèle idéal, VDD = 1.8 V) :
+  AND   w=(+2,+2) b=-3 : 00->0 01->0 10->0 11->1
+  OR    w=(+2,+2) b=-1 : 00->0 01->1 10->1 11->1
+  NAND  w=(-2,-2) b=+3 : 00->1 01->1 10->1 11->0
+  XOR 2-2-1 (3 évaluations : h1=OR, h2=NAND, y=AND(h1,h2)) : 00->0 01->1 10->1 11->0
+
+Monte Carlo fonctionnel (1000 dies × VDD {1.62, 1.8, 1.98}, offset σ = 2.40 mV) :
+  AND      : 0 erreurs / 12000 évaluations
+  OR       : 0 erreurs / 12000 évaluations
+  NAND     : 0 erreurs / 12000 évaluations
+  XOR_221  : 0 erreurs / 12000 évaluations
+  SAR      : 41 erreurs / 3000 évaluations
+  SAR (poids et entrées aléatoires) : erreur ∈ [-5, 6] LSB
+  Marges : portes 1 LSB = 34.5 mV (D = G0+7) ; SAR 0.5 LSB_min = 9.70 mV = 4.0 σ_os
+
+Surface (estimation) : 110 unités R_U de 69.46 µm -> 7.64 mm de poly, ≈ 8116 µm² ; 34 drivers tri-state ; comparateur ≈ 600 µm² (estim.)
+  Total estimé (×1.3 routage) ≈ 12511 µm² ≈ 0.0125 mm²

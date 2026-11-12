@@ -1,0 +1,5 @@
+__pycache__/
+*.raw
+.DS_Store
+sim/out/*.dat
+sim/out/*.spice

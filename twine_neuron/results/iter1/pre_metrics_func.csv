@@ -1,0 +1,5 @@
+test,value,unit,spec,status,source
+ET/OU/NON-ET : erreurs,0,/12,0,OK,results/pre_func.csv
+kickback différentiel max sur V+−V−,23.278,mV,< LSB/4 (≈ 4 mV),NON,sim/out/pre_func.dat
+kickback mode commun max,337.135,mV,info,OK,sim/out/pre_func.dat
+"puissance moyenne (séquence ET/OU/NON-ET, 10 MHz)",21.1,µW,<= 50 µW,OK,sim/out/pre_func.dat

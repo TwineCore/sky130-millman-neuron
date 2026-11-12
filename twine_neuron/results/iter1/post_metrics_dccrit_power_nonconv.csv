@@ -1,0 +1,6 @@
+test,value,unit,spec,status,source
+DC critiques : erreurs de signe,2,/34,0,NON,results/post_dccrit.csv
+|ΔV| min à ±0.5 LSB,8.17,mV,> 3σ_os (MC),OK,results/post_dccrit.csv
+erreur ΔV max (codes critiques),105209.8482,LSB,< 0.5 LSB,NON,results/post_dccrit.csv
+mode commun min V±,-1759.83,V,>= 0.75 V (fenêtre comparateur),NON,results/post_dccrit.csv
+"P statique pire code ((-7, -7, -7, -7), 31, 1, (0, 0, 0, 0))",131.54,µW,info (S12 v2),OK,results/post_power.csv

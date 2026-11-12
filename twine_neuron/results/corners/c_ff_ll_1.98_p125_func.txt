@@ -1,0 +1,9 @@
+corner=ff_ll T=125.0 VDD=1.98 netlist=netlist/twine_neuron.spice
+== Fonctionnel : ET, OU, NON-ET (12 évaluations à 10 MHz)
+  [OK ] ET/OU/NON-ET : erreurs = 0 /12   (spec 0)
+  [NON] kickback différentiel max sur V+−V− = 31.06 mV   (spec < LSB/4 (≈ 4 mV))
+  [OK ] kickback / ΔV dans la fenêtre de décision (1 ns), max = 41.3 %   (spec info (< 100 % : pas d'inversion))
+  [OK ] inversions de signe de ΔV pendant la décision = 0    (spec 0)
+  [OK ] kickback mode commun max = 490.057 mV   (spec info)
+  [OK ] puissance moyenne (séquence ET/OU/NON-ET, 10 MHz) = 65.03 µW   (spec info (S12 v2))
+   (460 s)

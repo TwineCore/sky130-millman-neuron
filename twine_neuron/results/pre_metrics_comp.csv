@@ -1,0 +1,4 @@
+test,value,unit,spec,status,source
+"fenêtre CM fonctionnelle (rampe ±4 mV, 1 transition)",0.60–1.80,V,"⊇ [0.75, 1.80]",OK,results/pre_comp_offset.csv
+offset systématique max (0.75–1.8 V),0.0,mV,< LSB/6 = 2.42 mV (aléatoire en phase 3),OK,results/pre_comp_offset.csv
+hystérésis max (0.75–1.8 V),0.34,mV,< LSB/6 = 2.42 mV,OK,results/pre_comp_offset.csv

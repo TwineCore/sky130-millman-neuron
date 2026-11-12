@@ -1,0 +1,114 @@
+
+Circuit 1 cell sky130_fd_pr__pfet_01v8 and Circuit 2 cell sky130_fd_pr__pfet_01v8 are black boxes.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__pfet_01v8         |Circuit 2: sky130_fd_pr__pfet_01v8         
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__pfet_01v8 and sky130_fd_pr__pfet_01v8 are equivalent.
+
+Circuit 1 cell sky130_fd_pr__nfet_01v8 and Circuit 2 cell sky130_fd_pr__nfet_01v8 are black boxes.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__nfet_01v8         |Circuit 2: sky130_fd_pr__nfet_01v8         
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__nfet_01v8 and sky130_fd_pr__nfet_01v8 are equivalent.
+
+Circuit 1 cell sky130_fd_pr__res_xhigh_po_0p35 and Circuit 2 cell sky130_fd_pr__res_xhigh_po_0p35 are black boxes.
+Warning: Equate pins:  cell sky130_fd_pr__res_xhigh_po_0p35 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__res_xhigh_po_0p35 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__res_xhigh_po_0p35 |Circuit 2: sky130_fd_pr__res_xhigh_po_0p35 
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__res_xhigh_po_0p35 and sky130_fd_pr__res_xhigh_po_0p35 are equivalent.
+Flattening unmatched subcell slice_w1 in circuit twine_neuron (1)(10 instances)
+Flattening unmatched subcell slice_w2 in circuit twine_neuron (1)(10 instances)
+Flattening unmatched subcell slice_w4 in circuit twine_neuron (1)(10 instances)
+Flattening unmatched subcell slice_w8 in circuit twine_neuron (1)(2 instances)
+Flattening unmatched subcell slice_w16 in circuit twine_neuron (1)(2 instances)
+Flattening unmatched subcell slice_half in circuit twine_neuron (1)(2 instances)
+Flattening unmatched subcell millman_node in circuit twine_neuron (1)(2 instances)
+Flattening unmatched subcell comparator in circuit twine_neuron (1)(1 instance)
+
+Class twine_neuron (0):  Merged 370 parallel devices.
+Class twine_neuron (0):  Merged 54 series devices.
+Class twine_neuron (1):  Merged 32 parallel devices.
+Class twine_neuron (1):  Merged 54 series devices.
+Subcircuit summary:
+Circuit 1: twine_neuron                    |Circuit 2: twine_neuron                    
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__pfet_01v8 (324->156)         |sky130_fd_pr__pfet_01v8 (324->156)         
+sky130_fd_pr__nfet_01v8 (325->155)         |sky130_fd_pr__nfet_01v8 (325->155)         
+sky130_fd_pr__res_xhigh_po_0p35 (124->38)  |sky130_fd_pr__res_xhigh_po_0p35 (124->38)  
+Number of devices: 349                     |Number of devices: 349                     
+Number of nets: 224                        |Number of nets: 224                        
+---------------------------------------------------------------------------------------
+Resolving symmetries by property value.
+Resolving symmetries by pin name.
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: twine_neuron                    |Circuit 2: twine_neuron                    
+-------------------------------------------|-------------------------------------------
+CLK                                        |CLK                                        
+Q                                          |Q                                          
+QB                                         |QB                                         
+DBP                                        |DBP                                        
+DBM                                        |DBM                                        
+VM                                         |VM                                         
+VP                                         |VP                                         
+VSS                                        |VSS                                        
+DM3                                        |DM3                                        
+DM1                                        |DM1                                        
+DM4                                        |DM4                                        
+DM2                                        |DM2                                        
+DP1                                        |DP1                                        
+DP4                                        |DP4                                        
+DP3                                        |DP3                                        
+DP2                                        |DP2                                        
+EN1_0                                      |EN1_0                                      
+EN4_0                                      |EN4_0                                      
+EN3_0                                      |EN3_0                                      
+EN2_0                                      |EN2_0                                      
+EN1_1                                      |EN1_1                                      
+EN2_1                                      |EN2_1                                      
+EN3_1                                      |EN3_1                                      
+EN4_1                                      |EN4_1                                      
+EN3_2                                      |EN3_2                                      
+EN1_2                                      |EN1_2                                      
+EN2_2                                      |EN2_2                                      
+EN4_2                                      |EN4_2                                      
+ENB_0                                      |ENB_0                                      
+ENB_1                                      |ENB_1                                      
+ENB_2                                      |ENB_2                                      
+ENB_3                                      |ENB_3                                      
+ENB_4                                      |ENB_4                                      
+HEN                                        |HEN                                        
+VDD                                        |VDD                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes twine_neuron and twine_neuron are equivalent.
+
+Final result: Circuits match uniquely.
+.

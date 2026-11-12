@@ -1,0 +1,13 @@
+# Dépôt limité au projet neurone : tout le reste du dossier est ignoré
+/*
+!/.gitignore
+!/README.md
+!/twine_neuron/
+!/neurone_analogique/
+
+# données brutes de simulation (~450 Mo, régénérables par les scripts sim/)
+/twine_neuron/sim/out/
+__pycache__/
+*.pyc
+.DS_Store
+*.raw

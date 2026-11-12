@@ -1,0 +1,3 @@
+test,value,unit,spec,status,source
+Ron/R_slice max,0.513,%,< 1 %,OK,results/pre_ron.csv
+fuite Hi-Z max,5.27e-10,A,<< I_LSB,OK,results/pre_ron.csv

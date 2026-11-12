@@ -1,0 +1,7 @@
+test,value,unit,spec,status,source
+ET/OU/NON-ET : erreurs,0,/12,0,OK,results/c_ss_hh_1.62_m40_func.csv
+kickback différentiel max sur V+−V−,28.718,mV,< LSB/4 (≈ 4 mV),NON,sim/out/c_ss_hh_1.62_m40_func.dat
+"kickback / ΔV dans la fenêtre de décision (1 ns), max",35.0,%,info (< 100 % : pas d'inversion),OK,sim/out/c_ss_hh_1.62_m40_func.dat
+inversions de signe de ΔV pendant la décision,0,,0,OK,sim/out/c_ss_hh_1.62_m40_func.dat
+kickback mode commun max,274.293,mV,info,OK,sim/out/c_ss_hh_1.62_m40_func.dat
+"puissance moyenne (séquence ET/OU/NON-ET, 10 MHz)",18.65,µW,info (S12 v2),OK,sim/out/c_ss_hh_1.62_m40_func.dat

@@ -1,0 +1,10 @@
+metric,worst,lib,vdd,temp
+dc_sign_err,0.0,tt,1.8,27
+dv_half_min_mV,7.23,ss,1.62,125
+dc_err_max_LSB,0.1909,ff_ll,1.98,125
+vcm_min_V,0.7574,ss_hh,1.62,-40
+t_settle_ns,58.11,ss_hh,1.62,-40
+func_err,0.0,tt,1.8,27
+kick_flips,0.0,tt,1.8,27
+P_func_uW,72.8567,ff_ll,1.98,125
+P_worst_uW,274.5,ff_ll,1.98,125

@@ -1,0 +1,3 @@
+test,value,unit,spec,status,source
+"t_settle 0.5 LSB, pire config (S=14.5)",43.54,ns,<= 50 ns (visé),OK,sim/out/post_tt.log (lignes [OK ] ; métriques non écrites car le test func suivant a échoué)
+t_settle vs budget dur (front d'horloge),43.54,ns,< 85 ns,OK,sim/out/post_tt.log

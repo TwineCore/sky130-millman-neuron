@@ -1,0 +1,7 @@
+test,value,unit,spec,status,source
+ET/OU/NON-ET : erreurs,0,/4,0,OK,results/p_ff_ll_1.98_p125_NAND_func.csv
+kickback différentiel max sur V+−V−,24.724,mV,< LSB/4 (≈ 4 mV),NON,sim/out/p_ff_ll_1.98_p125_NAND_func.dat
+"kickback / ΔV dans la fenêtre de décision (1 ns), max",45.7,%,info (< 100 % : pas d'inversion),OK,sim/out/p_ff_ll_1.98_p125_NAND_func.dat
+inversions de signe de ΔV pendant la décision,0,,0,OK,sim/out/p_ff_ll_1.98_p125_NAND_func.dat
+kickback mode commun max,508.9,mV,info,OK,sim/out/p_ff_ll_1.98_p125_NAND_func.dat
+"puissance moyenne (séquence ET/OU/NON-ET, 10 MHz)",76.24,µW,info (S12 v2),OK,sim/out/p_ff_ll_1.98_p125_NAND_func.dat

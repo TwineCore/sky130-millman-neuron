@@ -1,0 +1,5 @@
+# xschemrc projet twine_neuron : PDK sky130A + symboles locaux
+source $env(PDK_ROOT)/sky130A/libs.tech/xschem/xschemrc
+append XSCHEM_LIBRARY_PATH :[file dirname [file normalize [info script]]]
+# la cellule top est netlistée comme .subckt (inclusion dans les testbenches)
+set top_is_subckt 1

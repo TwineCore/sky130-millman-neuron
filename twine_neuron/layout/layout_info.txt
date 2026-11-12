@@ -1,0 +1,1 @@
+/foss/designs/twine_neuron/layout/twine_neuron.gds : 447.5 x 91.9 µm = 0.0411 mm² ; 36 slices, 28 bus d'entrée, comparateur 23 transistors, canal 14 nets

@@ -1,0 +1,279 @@
+** sch_path: /foss/designs/twine_neuron/xschem/twine_neuron.sch
+.subckt twine_neuron DP1 DP2 DP3 DP4 DM1 DM2 DM3 DM4 EN1_0 EN1_1 EN1_2 EN2_0 EN2_1 EN2_2 EN3_0 EN3_1 EN3_2 EN4_0 EN4_1 EN4_2 DBP
++ DBM ENB_0 ENB_1 ENB_2 ENB_3 ENB_4 HEN CLK Q QB VP VM VDD VSS
+*.PININFO DP1:I DP2:I DP3:I DP4:I DM1:I DM2:I DM3:I DM4:I EN1_0:I EN1_1:I EN1_2:I EN2_0:I EN2_1:I EN2_2:I EN3_0:I EN3_1:I EN3_2:I
+*+ EN4_0:I EN4_1:I EN4_2:I DBP:I DBM:I ENB_0:I ENB_1:I ENB_2:I ENB_3:I ENB_4:I HEN:I CLK:I Q:O QB:O VP:O VM:O VDD:B VSS:B
+XS1P0 DP1 EN1_0 VP VDD VSS slice_w1
+XS1P1 DP1 EN1_1 VP VDD VSS slice_w2
+XS1P2 DP1 EN1_2 VP VDD VSS slice_w4
+XS1M0 DM1 EN1_0 VM VDD VSS slice_w1
+XS1M1 DM1 EN1_1 VM VDD VSS slice_w2
+XS1M2 DM1 EN1_2 VM VDD VSS slice_w4
+XS2P0 DP2 EN2_0 VP VDD VSS slice_w1
+XS2P1 DP2 EN2_1 VP VDD VSS slice_w2
+XS2P2 DP2 EN2_2 VP VDD VSS slice_w4
+XS2M0 DM2 EN2_0 VM VDD VSS slice_w1
+XS2M1 DM2 EN2_1 VM VDD VSS slice_w2
+XS2M2 DM2 EN2_2 VM VDD VSS slice_w4
+XS3P0 DP3 EN3_0 VP VDD VSS slice_w1
+XS3P1 DP3 EN3_1 VP VDD VSS slice_w2
+XS3P2 DP3 EN3_2 VP VDD VSS slice_w4
+XS3M0 DM3 EN3_0 VM VDD VSS slice_w1
+XS3M1 DM3 EN3_1 VM VDD VSS slice_w2
+XS3M2 DM3 EN3_2 VM VDD VSS slice_w4
+XS4P0 DP4 EN4_0 VP VDD VSS slice_w1
+XS4P1 DP4 EN4_1 VP VDD VSS slice_w2
+XS4P2 DP4 EN4_2 VP VDD VSS slice_w4
+XS4M0 DM4 EN4_0 VM VDD VSS slice_w1
+XS4M1 DM4 EN4_1 VM VDD VSS slice_w2
+XS4M2 DM4 EN4_2 VM VDD VSS slice_w4
+XBP0 DBP ENB_0 VP VDD VSS slice_w1
+XBP1 DBP ENB_1 VP VDD VSS slice_w2
+XBP2 DBP ENB_2 VP VDD VSS slice_w4
+XBP3 DBP ENB_3 VP VDD VSS slice_w8
+XBP4 DBP ENB_4 VP VDD VSS slice_w16
+XBM0 DBM ENB_0 VM VDD VSS slice_w1
+XBM1 DBM ENB_1 VM VDD VSS slice_w2
+XBM2 DBM ENB_2 VM VDD VSS slice_w4
+XBM3 DBM ENB_3 VM VDD VSS slice_w8
+XBM4 DBM ENB_4 VM VDD VSS slice_w16
+XHP VSS HEN VP VDD VSS slice_half
+XHM VDD HEN VM VDD VSS slice_half
+XG0P VP VDD VSS millman_node
+XG0M VM VDD VSS millman_node
+XCMP VP VM CLK Q QB VDD VSS comparator
+.ends
+
+* expanding   symbol:  slice_w1.sym # of pins=5
+** sym_path: /foss/designs/twine_neuron/xschem/slice_w1.sym
+** sch_path: /foss/designs/twine_neuron/xschem/slice_w1.sch
+.subckt slice_w1 D EN OUT VDD VSS
+*.PININFO D:I EN:I OUT:O VDD:B VSS:B
+XMPI1 DB D VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad=0.2436 as=0.2436 pd=2.26 ps=2.26 nrd=0.345238095238095
++ nrs=0.345238095238095 sa=0 sb=0 sd=0 mult=1
+XMNI1 DB D VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XMPI2 ENB EN VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad=0.2436 as=0.2436 pd=2.26 ps=2.26 nrd=0.345238095238095
++ nrs=0.345238095238095 sa=0 sb=0 sd=0 mult=1
+XMNI2 ENB EN VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XMP1 NP1 DB VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=1
+XMP2 DRV ENB NP1 VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=1
+XMN2 DRV EN NN1 VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XMN1 NN1 DB VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XR1 RN1 DRV VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XR2 RN2 RN1 VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XR3 RN3 RN2 VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XR4 OUT RN3 VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+.ends
+
+
+* expanding   symbol:  slice_w2.sym # of pins=5
+** sym_path: /foss/designs/twine_neuron/xschem/slice_w2.sym
+** sch_path: /foss/designs/twine_neuron/xschem/slice_w2.sch
+.subckt slice_w2 D EN OUT VDD VSS
+*.PININFO D:I EN:I OUT:O VDD:B VSS:B
+XMPI1 DB D VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad=0.2436 as=0.2436 pd=2.26 ps=2.26 nrd=0.345238095238095
++ nrs=0.345238095238095 sa=0 sb=0 sd=0 mult=1
+XMNI1 DB D VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XMPI2 ENB EN VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad=0.2436 as=0.2436 pd=2.26 ps=2.26 nrd=0.345238095238095
++ nrs=0.345238095238095 sa=0 sb=0 sd=0 mult=1
+XMNI2 ENB EN VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XMP1 NP1 DB VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=2 m=2
+XMP2 DRV ENB NP1 VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=2 m=2
+XMN2 DRV EN NN1 VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=2 m=2
+XMN1 NN1 DB VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=2 m=2
+XR1 RN1 DRV VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XR2 OUT RN1 VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+.ends
+
+
+* expanding   symbol:  slice_w4.sym # of pins=5
+** sym_path: /foss/designs/twine_neuron/xschem/slice_w4.sym
+** sch_path: /foss/designs/twine_neuron/xschem/slice_w4.sch
+.subckt slice_w4 D EN OUT VDD VSS
+*.PININFO D:I EN:I OUT:O VDD:B VSS:B
+XMPI1 DB D VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad=0.2436 as=0.2436 pd=2.26 ps=2.26 nrd=0.345238095238095
++ nrs=0.345238095238095 sa=0 sb=0 sd=0 mult=1
+XMNI1 DB D VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XMPI2 ENB EN VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad=0.2436 as=0.2436 pd=2.26 ps=2.26 nrd=0.345238095238095
++ nrs=0.345238095238095 sa=0 sb=0 sd=0 mult=1
+XMNI2 ENB EN VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XMP1 NP1 DB VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=4 m=4
+XMP2 DRV ENB NP1 VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=4 m=4
+XMN2 DRV EN NN1 VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=4 m=4
+XMN1 NN1 DB VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=4 m=4
+XR1 OUT DRV VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+.ends
+
+
+* expanding   symbol:  slice_w8.sym # of pins=5
+** sym_path: /foss/designs/twine_neuron/xschem/slice_w8.sym
+** sch_path: /foss/designs/twine_neuron/xschem/slice_w8.sch
+.subckt slice_w8 D EN OUT VDD VSS
+*.PININFO D:I EN:I OUT:O VDD:B VSS:B
+XMPI1 DB D VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad=0.2436 as=0.2436 pd=2.26 ps=2.26 nrd=0.345238095238095
++ nrs=0.345238095238095 sa=0 sb=0 sd=0 mult=1
+XMNI1 DB D VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XMPI2 ENB EN VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad=0.2436 as=0.2436 pd=2.26 ps=2.26 nrd=0.345238095238095
++ nrs=0.345238095238095 sa=0 sb=0 sd=0 mult=1
+XMNI2 ENB EN VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XMP1 NP1 DB VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=8 m=8
+XMP2 DRV ENB NP1 VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=8 m=8
+XMN2 DRV EN NN1 VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=8 m=8
+XMN1 NN1 DB VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=8 m=8
+XR1_0 OUT DRV VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XR1_1 OUT DRV VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+.ends
+
+
+* expanding   symbol:  slice_w16.sym # of pins=5
+** sym_path: /foss/designs/twine_neuron/xschem/slice_w16.sym
+** sch_path: /foss/designs/twine_neuron/xschem/slice_w16.sch
+.subckt slice_w16 D EN OUT VDD VSS
+*.PININFO D:I EN:I OUT:O VDD:B VSS:B
+XMPI1 DB D VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad=0.2436 as=0.2436 pd=2.26 ps=2.26 nrd=0.345238095238095
++ nrs=0.345238095238095 sa=0 sb=0 sd=0 mult=1
+XMNI1 DB D VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XMPI2 ENB EN VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad=0.2436 as=0.2436 pd=2.26 ps=2.26 nrd=0.345238095238095
++ nrs=0.345238095238095 sa=0 sb=0 sd=0 mult=1
+XMNI2 ENB EN VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XMP1 NP1 DB VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=16 m=16
+XMP2 DRV ENB NP1 VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=16 m=16
+XMN2 DRV EN NN1 VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=16 m=16
+XMN1 NN1 DB VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=16 m=16
+XR1_0 OUT DRV VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XR1_1 OUT DRV VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XR1_2 OUT DRV VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XR1_3 OUT DRV VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+.ends
+
+
+* expanding   symbol:  slice_half.sym # of pins=5
+** sym_path: /foss/designs/twine_neuron/xschem/slice_half.sym
+** sch_path: /foss/designs/twine_neuron/xschem/slice_half.sch
+.subckt slice_half D EN OUT VDD VSS
+*.PININFO D:I EN:I OUT:O VDD:B VSS:B
+XMPI1 DB D VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad=0.2436 as=0.2436 pd=2.26 ps=2.26 nrd=0.345238095238095
++ nrs=0.345238095238095 sa=0 sb=0 sd=0 mult=1
+XMNI1 DB D VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XMPI2 ENB EN VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad=0.2436 as=0.2436 pd=2.26 ps=2.26 nrd=0.345238095238095
++ nrs=0.345238095238095 sa=0 sb=0 sd=0 mult=1
+XMNI2 ENB EN VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XMP1 NP1 DB VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=1
+XMP2 DRV ENB NP1 VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=1
+XMN2 DRV EN NN1 VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XMN1 NN1 DB VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XR1 RN1 DRV VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XR2 RN2 RN1 VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XR3 RN3 RN2 VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XR4 RN4 RN3 VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XR5 RN5 RN4 VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XR6 RN6 RN5 VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XR7 RN7 RN6 VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XR8 OUT RN7 VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+.ends
+
+
+* expanding   symbol:  millman_node.sym # of pins=3
+** sym_path: /foss/designs/twine_neuron/xschem/millman_node.sym
+** sch_path: /foss/designs/twine_neuron/xschem/millman_node.sch
+.subckt millman_node NODE VDD VSS
+*.PININFO NODE:B VDD:B VSS:B
+XRG0_0 NODE VDD VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XRG0_1 NODE VDD VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XRG0_2 NODE VDD VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XRG0_3 NODE VDD VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XRG0_4 NODE VDD VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XRG0_5 NODE VDD VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XRG0_6 NODE VDD VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XRG0_7 NODE VDD VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XRG0_8 NODE VDD VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XRG0_9 NODE VDD VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XRG0_10 NODE VDD VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XRG0_11 NODE VDD VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+XRG0_12 NODE VDD VSS sky130_fd_pr__res_xhigh_po_0p35 L=75.24 mult=1
+.ends
+
+
+* expanding   symbol:  comparator.sym # of pins=7
+** sym_path: /foss/designs/twine_neuron/xschem/comparator.sym
+** sch_path: /foss/designs/twine_neuron/xschem/comparator.sch
+.subckt comparator INP INN CLK Q QB VDD VSS
+*.PININFO INP:I INN:I CLK:I Q:O QB:O VDD:B VSS:B
+XMT TAIL CLK VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=4 nf=1 ad=1.16 as=1.16 pd=8.58 ps=8.58 nrd=0.0725 nrs=0.0725 sa=0 sb=0 sd=0
++ mult=1
+XM1 XN TAIL TAIL VSS sky130_fd_pr__nfet_01v8 L=1 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=2 m=2
+XM2 XP TAIL TAIL VSS sky130_fd_pr__nfet_01v8 L=1 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=2 m=2
+XM3 OUTN OUTP XN VSS sky130_fd_pr__nfet_01v8 L=0.15 W=2 nf=1 ad=0.58 as=0.58 pd=4.58 ps=4.58 nrd=0.145 nrs=0.145 sa=0 sb=0 sd=0
++ mult=1
+XM4 OUTP OUTN XP VSS sky130_fd_pr__nfet_01v8 L=0.15 W=2 nf=1 ad=0.58 as=0.58 pd=4.58 ps=4.58 nrd=0.145 nrs=0.145 sa=0 sb=0 sd=0
++ mult=1
+XM5 OUTN OUTP VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 ad=0.58 as=0.58 pd=4.58 ps=4.58 nrd=0.145 nrs=0.145 sa=0 sb=0 sd=0
++ mult=1
+XM6 OUTP OUTN VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 ad=0.58 as=0.58 pd=4.58 ps=4.58 nrd=0.145 nrs=0.145 sa=0 sb=0 sd=0
++ mult=1
+XS1 OUTN CLK VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=1
+XS2 OUTP CLK VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=1
+XS3 XN CLK VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1
+XS4 XP CLK VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1
+XPBN SN OUTN VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad=0.2436 as=0.2436 pd=2.26 ps=2.26 nrd=0.345238095238095
++ nrs=0.345238095238095 sa=0 sb=0 sd=0 mult=1
+XNBN SN OUTN VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XPBP RP OUTP VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad=0.2436 as=0.2436 pd=2.26 ps=2.26 nrd=0.345238095238095
++ nrs=0.345238095238095 sa=0 sb=0 sd=0 mult=1
+XNBP RP OUTP VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XPA1 TA RP VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1
+XPA2 Q QB TA VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1
+XNA1 Q RP VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad=0.145 as=0.145 pd=1.58 ps=1.58 nrd=0.58 nrs=0.58 sa=0 sb=0 sd=0
++ mult=1
+XNA2 Q QB VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad=0.145 as=0.145 pd=1.58 ps=1.58 nrd=0.58 nrs=0.58 sa=0 sb=0 sd=0
++ mult=1
+XPB1 TB SN VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1
+XPB2 QB Q TB VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1
+XNB1 QB SN VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad=0.145 as=0.145 pd=1.58 ps=1.58 nrd=0.58 nrs=0.58 sa=0 sb=0 sd=0
++ mult=1
+XNB2 QB Q VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad=0.145 as=0.145 pd=1.58 ps=1.58 nrd=0.58 nrs=0.58 sa=0 sb=0 sd=0
++ mult=1
+.ends
+

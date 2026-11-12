@@ -1,0 +1,5 @@
+slot,eval,expected,q_sim,ok
+0,"NAND(0,0)",1,1,1
+1,"NAND(0,1)",1,1,1
+2,"NAND(1,0)",1,1,1
+3,"NAND(1,1)",0,0,1

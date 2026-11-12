@@ -1,0 +1,2 @@
+test,value,unit,spec,status,source
+"t_settle 0.5 LSB, pire config (S=14.5)",43.5,ns,<= 50 ns,OK,results/explore_ru0p8_settle.csv

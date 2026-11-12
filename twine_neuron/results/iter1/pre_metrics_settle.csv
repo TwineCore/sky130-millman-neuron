@@ -1,0 +1,2 @@
+test,value,unit,spec,status,source
+"t_settle 0.5 LSB, pire config (S=7.5)",226.07,ns,<= 50 ns,NON,results/pre_settle.csv

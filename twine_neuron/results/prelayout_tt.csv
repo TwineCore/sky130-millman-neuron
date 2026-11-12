@@ -1,0 +1,25 @@
+test,value,unit,spec,status,source
+Ron/R_slice max,0.513,%,< 1 %,OK,results/pre_ron.csv
+fuite Hi-Z max,5.27e-10,A,<< I_LSB,OK,results/pre_ron.csv
+"P statique pire code ((-7, -7, -7, -7), 31, 1, (0, 0, 0, 0))",131.66,µW,info (S12 v2 ; v1 : <= 100 µW (option 1)),OK,results/pre_power.csv
+"t_settle 0.5 LSB, pire config (S=14.5)",34.22,ns,<= 50 ns,OK,results/pre_settle.csv
+ET/OU/NON-ET : erreurs,0,/12,0,OK,results/pre_func.csv
+kickback différentiel max sur V+−V−,29.907,mV,< LSB/4 (≈ 4 mV),NON,sim/out/pre_func.dat
+"kickback / ΔV dans la fenêtre de décision (1 ns), max",31.8,%,info (< 100 % : pas d'inversion),OK,sim/out/pre_func.dat
+inversions de signe de ΔV pendant la décision,0,,0,OK,sim/out/pre_func.dat
+kickback mode commun max,372.004,mV,info,OK,sim/out/pre_func.dat
+"puissance moyenne (séquence ET/OU/NON-ET, 10 MHz)",26.89,µW,<= 50 µW,OK,sim/out/pre_func.dat
+XOR 2-2-1 : erreurs,0,/4,0,OK,results/pre_xor.csv
+"erreur ΔV vs modèle (max |.|, tous codes)",0.078,LSB,< 0.5 LSB,OK,results/pre_dc.csv
+INL poids synapse (max |.|),0.0141,LSB,< 0.5 LSB,OK,results/pre_dc.csv
+DNL poids synapse (max |.|),0.0028,LSB,< 0.5 LSB,OK,results/pre_dc.csv
+INL biais (max |.|),0.0548,LSB,< 0.5 LSB,OK,results/pre_dc.csv
+DNL biais (max |.|),0.0028,LSB,< 0.5 LSB,OK,results/pre_dc.csv
+erreurs de signe (codes non nuls),0,,0,OK,results/pre_dc.csv
+mode commun min V± (codes testés),0.9374,V,>= 0.75 V,OK,results/pre_dc.csv
+P statique moyenne (300 codes aléatoires),72.92,µW,"info (S12 v2 ; v1 : <= 50 µW (moyenne, option 1))",OK,results/pre_dc.csv
+SAR : lectures fausses (2 lectures transitoires complètes),0,/2,0,OK,results/pre_sar.csv
+t_dec à ΔV = 0.5 LSB_min (7.26 mV) pire Vcm,0.543,ns,< 5 ns,OK,results/pre_comp_tdec.csv
+"fenêtre CM fonctionnelle (rampe ±4 mV, 1 transition)",0.60–1.80,V,"⊇ [0.75, 1.80]",OK,results/pre_comp_offset.csv
+offset systématique max (0.75–1.8 V),0.0,mV,< LSB/6 = 2.42 mV (aléatoire en phase 3),OK,results/pre_comp_offset.csv
+hystérésis max (0.75–1.8 V),0.34,mV,< LSB/6 = 2.42 mV,OK,results/pre_comp_offset.csv

@@ -1,0 +1,8 @@
+test,value,unit,spec,status,source
+DC critiques : erreurs de signe,0,/34,0,OK,results/c_ff_typ_1.98_p125_dccrit.csv
+|ΔV| min à ±0.5 LSB,8.51,mV,> 3σ_os (MC),OK,results/c_ff_typ_1.98_p125_dccrit.csv
+erreur ΔV max (codes critiques),0.205,LSB,< 0.5 LSB,OK,results/c_ff_typ_1.98_p125_dccrit.csv
+mode commun min V±,0.9254,V,>= 0.75 V (fenêtre comparateur),OK,results/c_ff_typ_1.98_p125_dccrit.csv
+"t_settle 0.5 LSB, pire config (S=14.5)",29.52,ns,<= 50 ns (visé),OK,results/c_ff_typ_1.98_p125_settle.csv
+t_settle vs budget dur (front d'horloge),29.52,ns,< 85 ns,OK,results/c_ff_typ_1.98_p125_settle.csv
+"P statique pire code ((-7, -7, -7, -7), 31, 1, (0, 0, 0, 0))",260.43,µW,info (S12 v2),OK,results/c_ff_typ_1.98_p125_power.csv

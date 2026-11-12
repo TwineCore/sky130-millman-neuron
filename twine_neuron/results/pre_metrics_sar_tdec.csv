@@ -1,0 +1,3 @@
+test,value,unit,spec,status,source
+SAR : lectures fausses (2 lectures transitoires complètes),0,/2,0,OK,results/pre_sar.csv
+t_dec à ΔV = 0.5 LSB_min (7.26 mV) pire Vcm,0.543,ns,< 5 ns,OK,results/pre_comp_tdec.csv

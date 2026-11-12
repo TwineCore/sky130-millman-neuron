@@ -1,0 +1,29 @@
+* Extraction Avt sky130 nfet_01v8 : dVgs de paires diode a courant fixe, corner tt_mm
+.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt_mm
+.param ID=10u
+I1a 0 a1 {ID}
+XA1 a1 a1 0 0 sky130_fd_pr__nfet_01v8 W=1 L=1
+I1b 0 b1 {ID}
+XB1 b1 b1 0 0 sky130_fd_pr__nfet_01v8 W=1 L=1
+I2a 0 a2 {ID*4}
+XA2 a2 a2 0 0 sky130_fd_pr__nfet_01v8 W=4 L=1
+I2b 0 b2 {ID*4}
+XB2 b2 b2 0 0 sky130_fd_pr__nfet_01v8 W=4 L=1
+I3a 0 a3 {ID*4}
+XA3 a3 a3 0 0 sky130_fd_pr__nfet_01v8 W=8 L=2
+I3b 0 b3 {ID*4}
+XB3 b3 b3 0 0 sky130_fd_pr__nfet_01v8 W=8 L=2
+.control
+set noaskquit
+let k = 0
+dowhile k < 200
+  reset
+  op
+  let x1 = v(a1) - v(b1)
+  let x2 = v(a2) - v(b2)
+  let x3 = v(a3) - v(b3)
+  echo "D $&x1 $&x2 $&x3"
+  let k = k + 1
+end
+.endc
+.end
