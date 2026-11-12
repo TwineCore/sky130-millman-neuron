@@ -23,7 +23,7 @@ b_min = plus petit b donnant Q = 1, puis Σw·x = 1 − b_min. Exemple simulé :
 décisions 0:1, −16:1, −24:1, −28:0, −26:1, −27:1 → Σw·x = 28 (`results/pre_sar.csv`).
 
 ## 4. Précautions
-- Respecter le budget de stabilisation (≥ 47.1 ns au pire corner pré-layout avant le front d'horloge).
+- Respecter le budget de stabilisation (≥ 58.1 ns au pire corner post-layout avant le front d'horloge).
 - Consommation statique tant qu'une slice est active : mettre tous les EN à 0 (Hi-Z) au repos.
 - Les nœuds VP/VM sont à haute impédance (Ru/D) : toute charge externe les ralentit et les décale.
 

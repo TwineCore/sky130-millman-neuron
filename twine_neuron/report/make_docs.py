@@ -351,7 +351,7 @@ Neurone à seuil analogique programmable, 4 entrées, technologie SkyWater sky13
 | Alimentation | 1.8 V (1.62–1.98 V) | corners `results/corners_pre.csv` |
 | Cadence | 10 MHz (une décision par période) | `sim/tn.py` |
 | LSB (ΔV par unité) | ≥ {fnum(M['LSB_MIN_mV'], 2)} mV @1.62 V, {fnum(M['LSB_NOM_DMAX_mV'], 2)} mV @1.8 V (code max) | `calc/out/model_summary.json` |
-| Stabilisation 0.5 LSB (pire code) | {TAB[4][2]} ns tt pré ; {TAB[4][3]} ns tt post ; pire corner {TAB[4][4]} | §3 du rapport |
+| Stabilisation 0.5 LSB (pire code) | {TAB[4][2]} ns tt pré ; {TAB[4][3]} ns tt post ; pire corner pré {TAB[4][4]} ; pire corner post {TAB[4][5]} | §3 du rapport |
 | Temps de décision | {TAB[5][2]} ns (0.5 LSB_min) | `results/pre_comp_tdec.csv` |
 | Précision du réseau | erreur ΔV ≤ {TAB[1][2]} LSB (tt) | `results/pre_dc.csv` |
 | Fonctionnel ET/OU/NON-ET (PEX) | {TAB[7][3]} / 12 erreur tt ; pire coin post : {TAB[7][5]} | `results/post_*_func.csv`, `results/corners_post.csv` |
@@ -402,7 +402,7 @@ b_min = plus petit b donnant Q = 1, puis Σw·x = 1 − b_min. Exemple simulé :
 décisions 0:1, −16:1, −24:1, −28:0, −26:1, −27:1 → Σw·x = 28 (`results/pre_sar.csv`).
 
 ## 4. Précautions
-- Respecter le budget de stabilisation (≥ {TAB[4][4].split(' ')[0]} ns au pire corner pré-layout avant le front d'horloge).
+- Respecter le budget de stabilisation (≥ {TAB[4][5].split(' ')[0]} ns au pire corner post-layout avant le front d'horloge).
 - Consommation statique tant qu'une slice est active : mettre tous les EN à 0 (Hi-Z) au repos.
 - Les nœuds VP/VM sont à haute impédance (Ru/D) : toute charge externe les ralentit et les décale.
 
@@ -459,7 +459,13 @@ def md2pdf(md_text, pdf_path, title, imgdir):
 
 imgdir = os.path.join(OUTDIR, "plots")
 md2pdf(rep, os.path.join(OUTDIR, "Neurone_Millman_conception.pdf"), "Neurone de Millman — conception", imgdir)
-md2pdf(ds, os.path.join(OUTDIR, "Datasheet.pdf"), "TwineNeuron-1 datasheet", imgdir)
-md2pdf(guide, os.path.join(OUTDIR, "Guide_utilisateur.pdf"), "TwineNeuron-1 guide", imgdir)
+# datasheet + guide : mise en page HTML/CSS imprimée par WeasyPrint (report/docs_html.py)
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import docs_html
+docs_html.build(dict(M=M, PRE=PRE, POST=POST, CP=CP, CPOST=CPOST, mcc=mcc, MC=MC, SAR=rows("pre_sar.csv"),
+                     imgdir=imgdir, area=area[0] if area else "n/d", dims=dims[0] if dims else "n/d",
+                     lvs=lvs[-1] if lvs else "n/d", mdrc=mdrc[-1] if mdrc else "n/d", ant=ant,
+                     devs=devs[-1] if devs else "n/d", nR=nR, nC=nC), OUTDIR)
 shutil.copy(os.path.join(ROOT, "report", "REPORT.md"), os.path.join(OUTDIR, "REPORT.md"))
 print("écrit :", os.path.join(ROOT, "report", "REPORT.md"), "et", OUTDIR)

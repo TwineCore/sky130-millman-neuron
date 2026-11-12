@@ -12,7 +12,7 @@ Neurone à seuil analogique programmable, 4 entrées, technologie SkyWater sky13
 | Alimentation | 1.8 V (1.62–1.98 V) | corners `results/corners_pre.csv` |
 | Cadence | 10 MHz (une décision par période) | `sim/tn.py` |
 | LSB (ΔV par unité) | ≥ 14.53 mV @1.62 V, 16.14 mV @1.8 V (code max) | `calc/out/model_summary.json` |
-| Stabilisation 0.5 LSB (pire code) | 34.2 ns tt pré ; 43.5 ns tt post ; pire corner 47.1 (ss_hh, 1.62 V, -40 °C) | §3 du rapport |
+| Stabilisation 0.5 LSB (pire code) | 34.2 ns tt pré ; 43.5 ns tt post ; pire corner pré 47.1 (ss_hh, 1.62 V, -40 °C) ; pire corner post 58.1 (ss_hh, 1.62 V, -40 °C) | §3 du rapport |
 | Temps de décision | 0.543 ns (0.5 LSB_min) | `results/pre_comp_tdec.csv` |
 | Précision du réseau | erreur ΔV ≤ 0.078 LSB (tt) | `results/pre_dc.csv` |
 | Fonctionnel ET/OU/NON-ET (PEX) | 0 / 12 erreur tt ; pire coin post : 0 (5 coins) | `results/post_*_func.csv`, `results/corners_post.csv` |

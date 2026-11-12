@@ -60,4 +60,8 @@ cd .. && bash sim/post_v3_regr.sh && bash sim/post_v3_corners.sh               #
 python3 report/make_docs.py                                                     # rapport + livrable
 ```
 
+La documentation (`make_docs.py`) tourne sur la machine hôte : la datasheet et le guide sont mis en page en
+HTML/CSS (`report/docs_html.py`) et imprimés en PDF par WeasyPrint (`pip install weasyprint fpdf2` ;
+sur macOS `brew install pango`).
+
 Les commandes exactes et leurs résultats sont dans `twine_neuron/LOG.md`.
